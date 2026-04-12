@@ -12,7 +12,8 @@
 - 全局配置化（`main.config.js`）
 
 ## 预览
-![](https://)
+![白天模式](https://gcore.jsdelivr.net/gh/mete0rxsc/minimal-homepage@master/img/%E9%A2%84%E8%A7%88%E5%9B%BE%20-%20%E7%99%BD%E5%A4%A9%E6%A8%A1%E5%BC%8F.png)  
+![黑夜模式](https://gcore.jsdelivr.net/gh/mete0rxsc/minimal-homepage@master/img/%E9%A2%84%E8%A7%88%E5%9B%BE%20-%20%E9%BB%91%E5%A4%9C%E6%A8%A1%E5%BC%8F.png)  
 
 ## 目录
 
@@ -59,24 +60,44 @@
 ## 快速开始
 
 ### 1) 安装
-#### 1. 安装
+#### 使用 npm 安装
+1. 安装
 
 ```bash
 npm install @mete0r/minimal-homepage
 ```
 
-#### 2. 进入项目
+2. 进入项目
 
 ```bash
 cd @mete0r/minimal-homepage
 ```
 
-#### 3. 安装依赖
+3. 安装依赖
 
 ```bash
 npm install
 ```
 
+#### 使用 git 安装
+
+1. 克隆仓库
+
+```bash
+git clone https://github.com/mete0rxsc/minimal-homepage.git
+```
+
+2. 进入项目
+
+```bash
+cd minimal-homepage
+```
+
+3. 安装依赖
+
+```bash
+npm install
+```
 
 ### 2) 本地开发
 
@@ -251,3 +272,7 @@ blog: {
 
 - 检查 `rssFeed` 是否可访问
 - 检查是否被目标站点 CORS 拒绝
+
+## 开源建议
+
+如果您配置了.env中的GITHUB_TOKEN，请**不要**将此文件上传到GitHub  
