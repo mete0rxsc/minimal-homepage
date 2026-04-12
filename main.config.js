@@ -70,7 +70,7 @@
       {
         name: 'GitHub',
         icon: 'https://res.xscnet.cn/BlogStatic/Icon/svg/github-line.svg',
-        url: 'https://github.com/mete0rxsc/'
+        url: 'https://github.com/mete0rxsc/minimal-homepage'
       }
     ]
   }
