@@ -2,7 +2,9 @@
   site: {
     title: 'Mete0r 的个人主页', //网站标题
     icon: 'https://img.xscnet.cn//i/2026/04/11/69da42c41efd5.png', //网站图标
-    background: 'https://img.xscnet.cn//i/2026/04/11/69da185da44e4.png' //网站背景
+    background: 'https://img.xscnet.cn//i/2026/04/11/69da185da44e4.png', //网站背景
+    useSpecialLightPalette: true, // 是否启用白天特殊配色
+    useSpecialDarkPalette: false // 是否启用黑夜特殊配色
   },
   author: {
     name: 'Mete0r', //你的名称
@@ -73,3 +75,4 @@
     ]
   }
 }
+

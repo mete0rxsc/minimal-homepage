@@ -6,6 +6,7 @@
 
 <script setup>
 import { onMounted } from 'vue'
+import config from '../../main.config.js'
 import './theme-button-element.js'
 
 const THEME_KEY = 'preferred-theme'
@@ -25,10 +26,13 @@ const getInitialTheme = () => {
 
 const initialTheme = getInitialTheme()
 
+const getLightBackground = () => (config.site?.useSpecialLightPalette ? '#D3F2DE' : 'aliceblue')
+const getDarkBackground = () => (config.site?.useSpecialDarkPalette ? '#28314E' : '#424242')
+
 const applyTheme = (theme) => {
   const isDark = theme === 'dark'
   document.documentElement.classList.toggle('dark', isDark)
-  document.body.style.backgroundColor = isDark ? '#424242' : 'aliceblue'
+  document.body.style.backgroundColor = isDark ? getDarkBackground() : getLightBackground()
 }
 
 const handleThemeChange = (e) => {
@@ -44,7 +48,6 @@ onMounted(() => {
 
 <style scoped>
 .theme-toggle {
-  /* 调整按钮位置 */
   position: relative;
   left: -45px;
 }

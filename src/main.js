@@ -21,6 +21,9 @@ const applySiteMeta = () => {
     iconLink.setAttribute('href', iconUrl)
     iconLink.setAttribute('type', iconUrl.endsWith('.svg') ? 'image/svg+xml' : 'image/png')
   }
+
+  document.documentElement.classList.toggle('special-light-palette', Boolean(config.site?.useSpecialLightPalette))
+  document.documentElement.classList.toggle('special-dark-palette', Boolean(config.site?.useSpecialDarkPalette))
 }
 
 const mountHeartClickEffect = () => {
@@ -46,3 +49,4 @@ if ('requestIdleCallback' in window) {
 } else {
   window.setTimeout(() => preloadAboutPage(), 500)
 }
+

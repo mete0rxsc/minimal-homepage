@@ -15,6 +15,98 @@
   --background: #424242;
 }
 
+html.special-light-palette:not(.dark) {
+  --background: #D3F2DE;
+  --light-surface: #EAF8EE;
+  --light-surface-strong: #99C39E;
+  --light-text: #506850;
+}
+
+html.special-light-palette:not(.dark) body {
+  color: var(--light-text);
+}
+
+html.special-light-palette:not(.dark) .bg-slate-50 {
+  background-color: #D3F2DE !important;
+}
+
+html.special-light-palette:not(.dark) .bg-white\/70,
+html.special-light-palette:not(.dark) .bg-white\/60,
+html.special-light-palette:not(.dark) .bg-white\/50,
+html.special-light-palette:not(.dark) .bg-white\/40,
+html.special-light-palette:not(.dark) .bg-white {
+  background-color: color-mix(in srgb, var(--light-surface) 88%, white 12%) !important;
+}
+
+html.special-light-palette:not(.dark) .text-gray-500,
+html.special-light-palette:not(.dark) .text-gray-600,
+html.special-light-palette:not(.dark) .text-gray-700 {
+  color: color-mix(in srgb, var(--light-text) 82%, #000 18%) !important;
+}
+
+html.special-light-palette:not(.dark) .text-blue-500,
+html.special-light-palette:not(.dark) .text-blue-600 {
+  color: var(--light-text) !important;
+}
+
+html.special-light-palette:not(.dark) .border-white\/40,
+html.special-light-palette:not(.dark) .border-white\/20,
+html.special-light-palette:not(.dark) .border-gray-200 {
+  border-color: color-mix(in srgb, var(--light-surface-strong) 58%, white 42%) !important;
+}
+
+html.special-light-palette:not(.dark) .bg-blue-600,
+html.special-light-palette:not(.dark) .hover\:bg-blue-700:hover {
+  background-color: var(--light-text) !important;
+}
+
+html.dark.special-dark-palette {
+  --background: #28314E;
+  --dark-surface: #334069;
+  --dark-surface-soft: #2E385B;
+  --dark-accent: #658AE4;
+  --dark-highlight: #A1FEEF;
+}
+
+html.dark.special-dark-palette body {
+  color: #A1FEEF;
+}
+
+html.dark.special-dark-palette .dark\:bg-\[\#1a1a1a\] {
+  background-color: #28314E !important;
+}
+
+html.dark.special-dark-palette .dark\:bg-\[\#424242\]\/80 {
+  background-color: color-mix(in srgb, #28314E 88%, #658AE4 12%) !important;
+}
+
+html.dark.special-dark-palette [class*="dark:bg-gray-900"] {
+  background-color: var(--dark-surface-soft) !important;
+}
+
+html.dark.special-dark-palette [class*="dark:bg-gray-800/"] {
+  background-color: color-mix(in srgb, var(--dark-surface) 82%, transparent) !important;
+}
+
+html.dark.special-dark-palette .dark\:text-white,
+html.dark.special-dark-palette [class*="dark:text-gray-2"],
+html.dark.special-dark-palette [class*="dark:text-gray-3"],
+html.dark.special-dark-palette [class*="dark:text-gray-4"] {
+  color: color-mix(in srgb, var(--dark-highlight) 86%, white 14%) !important;
+}
+
+html.dark.special-dark-palette .text-blue-500,
+html.dark.special-dark-palette .text-blue-600,
+html.dark.special-dark-palette .dark\:text-blue-400 {
+  color: var(--dark-accent) !important;
+}
+
+html.dark.special-dark-palette .dark\:border-gray-700,
+html.dark.special-dark-palette .dark\:border-gray-700\/40,
+html.dark.special-dark-palette .dark\:border-gray-800 {
+  border-color: color-mix(in srgb, var(--dark-accent) 55%, #28314E 45%) !important;
+}
+
 /* 跳转框背景色 */
 .bg-blue-600 {
   --un-bg-opacity: 1;
