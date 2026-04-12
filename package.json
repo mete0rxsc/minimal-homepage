@@ -1,7 +1,7 @@
 {
-  "name": "create-minimal-homepage",
+  "name": "minimal-homepage",
   "private": false,
-  "version": "2.0.3",
+  "version": "2.0.4",
   "type": "module",
   "files": [
     "src",
@@ -13,9 +13,6 @@
     "index.html",
     "README-en.md"
   ],
-  "bin": {
-    "create-minimal-homepage": "index.js"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
