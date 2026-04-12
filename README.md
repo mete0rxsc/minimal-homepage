@@ -1,4 +1,4 @@
-﻿# 个人主页模板 (Vue 3 + Vite)
+﻿# 个人主页 (Vue 3 + Vite)
 
 [English Version](./README-en.md)
 

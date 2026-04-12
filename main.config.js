@@ -22,8 +22,8 @@
     { name: '关于我', url: '/about' }
   ],
   blog: { //跳转博客相关配置
-    url: 'https://www.xscnet.cn',
-    rssFeed: 'https://www.xscnet.cn/atom.xml',
+    url: 'https://blog.xscnet.cn',
+    rssFeed: 'https://blog.xscnet.cn/atom.xml',
     randomCoverApi: 'https://rand.xscnet.cn/mix' //随机封面API（可选，文章列表会使用这个接口获取随机封面图）
   },
   github: {

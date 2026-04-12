@@ -1,4 +1,4 @@
-﻿# Personal Homepage Template (Vue 3 + Vite)
+﻿# Personal Homepage (Vue 3 + Vite)
 [中文版本](./README.md)
 
 A personal homepage project built with Vue 3 + Vite + Tailwind CSS, supporting:
