@@ -1,0 +1,87 @@
+﻿/* src/style.css */
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+:root {
+  --background: aliceblue;
+}
+
+.dark {
+  --background: #424242;
+}
+
+/* 跳转框背景色 */
+.bg-blue-600 {
+  --un-bg-opacity: 1;
+  background-color: rgb(128 128 128 / var(--un-bg-opacity));
+}
+
+.hover\:bg-blue-700:hover {
+  --un-bg-opacity: 1;
+  background-color: rgb(128 128 128 / var(--un-bg-opacity));
+}
+
+body {
+  background-color: var(--background);
+  transition: background-color 0.5s ease;
+}
+
+.route-fade-enter-active,
+.route-fade-leave-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.route-fade-enter-from {
+  opacity: 0;
+  transform: translateY(12px) scale(0.995);
+}
+
+.route-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.995);
+}
+
+.article-list-enter-active,
+.article-list-leave-active {
+  transition: all 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.article-list-enter-from,
+.article-list-leave-to {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+}
+
+.article-list-move {
+  transition: transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.name-chip {
+  padding: 0.35rem 0.85rem;
+  border-radius: 0.9rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.name-chip:hover {
+  background: rgba(15, 23, 42, 0.08);
+  box-shadow: inset 0 -1px 0 rgba(15, 23, 42, 0.18);
+}
+
+.dark .name-chip:hover {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
