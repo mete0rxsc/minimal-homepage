@@ -113,7 +113,31 @@ const loadGithubRepos = async () => {
     try {
       const cachedRepos = JSON.parse(localStorage.getItem(cacheKey) || 'null')
       if (Array.isArray(cachedRepos)) {
-        repos.value = cachedRepos.map(normalizeApiRepo)
+        let reposToDisplay = cachedRepos;
+        if (excludeForks) {
+          reposToDisplay = reposToDisplay.filter(repo => !repo.fork);
+        }
+        
+        const reposWithCovers = reposToDisplay.filter(repo => {
+          const hasCover = config.github?.covers?.[repo.name];
+          if (hasCover) {
+            console.log(`发现有封面的仓库: ${repo.name}, 封面: ${hasCover}`);
+          }
+          return hasCover;
+        });
+        const reposWithoutCovers = reposToDisplay.filter(repo => {
+          const hasNoCover = !config.github?.covers?.[repo.name];
+          if (hasNoCover) {
+            console.log(`发现无封面的仓库: ${repo.name}`);
+          }
+          return hasNoCover;
+        });
+        
+        console.log('配置中定义的封面仓库:', Object.keys(config.github?.covers || {}));
+        
+        const sortedRepos = [...reposWithCovers, ...reposWithoutCovers].slice(0, maxRepos);
+        console.log(`总共找到 ${reposToDisplay.length} 个仓库，其中有封面的 ${reposWithCovers.length} 个，最终显示 ${sortedRepos.length} 个`);
+        repos.value = sortedRepos.map(normalizeApiRepo);
         loading.value = false
         return
       }
@@ -123,7 +147,7 @@ const loadGithubRepos = async () => {
   }
 
   const token = import.meta.env.VITE_GITHUB_TOKEN
-  const url = `https://api.github.com/users/${username}/repos?sort=updated&per_page=${maxRepos}`
+  const url = `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`
   const headers = {
     Accept: 'application/vnd.github+json',
     ...(token && { Authorization: `Bearer ${token}` })
@@ -135,12 +159,34 @@ const loadGithubRepos = async () => {
   }
 
   const data = await res.json()
-  const filteredRepos = excludeForks ? data.filter((repo) => !repo.fork) : data
+  console.log('从GitHub API获取到的仓库总数:', data.length);
+  console.log('配置中定义的封面仓库:', Object.keys(config.github?.covers || {}));
+  
+  let filteredRepos = excludeForks ? data.filter((repo) => !repo.fork) : data
+  console.log('过滤fork后剩余仓库数:', filteredRepos.length);
 
-  localStorage.setItem(cacheKey, JSON.stringify(filteredRepos))
+  const reposWithCovers = filteredRepos.filter(repo => {
+    const hasCover = config.github?.covers?.[repo.name];
+    if (hasCover) {
+      console.log(`发现有封面的仓库: ${repo.name}, 封面: ${hasCover}`);
+    }
+    return hasCover;
+  });
+  const reposWithoutCovers = filteredRepos.filter(repo => {
+    const hasNoCover = !config.github?.covers?.[repo.name];
+    if (hasNoCover) {
+      console.log(`发现无封面的仓库: ${repo.name}`);
+    }
+    return hasNoCover;
+  });
+
+  const sortedRepos = [...reposWithCovers, ...reposWithoutCovers].slice(0, maxRepos);
+
+  localStorage.setItem(cacheKey, JSON.stringify(data)) // 缓存所有数据，不仅仅是过滤后的
   localStorage.setItem(cacheExpiryKey, (now + 24 * 60 * 60 * 1000).toString())
 
-  repos.value = filteredRepos.map(normalizeApiRepo)
+  repos.value = sortedRepos.map(normalizeApiRepo)
+  console.log(`最终显示 ${sortedRepos.length} 个仓库，其中有封面的 ${reposWithCovers.length} 个`);
   loading.value = false
 }
 

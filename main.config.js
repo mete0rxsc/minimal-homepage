@@ -29,12 +29,16 @@
   github: {
     useGithubApi: true, // 是否使用 GitHub API 获取项目（如果为 false，则只显示 manualRepos 中的项目）
     username: 'mete0rxsc', // GitHub 用户名
-    maxRepos: 10, // 最大显示仓库数量
+    maxRepos: 4, // 最大显示仓库数量
     excludeForks: true,  // 是否排除 Fork 的仓库
 
     // API 模式下：按仓库名称匹配封面
     covers: {
       // 'repo-name': 'https://example.com/repo-cover.jpg'
+      'minimal-homepage': 'https://img.xscnet.cn//i/2026/04/12/69db326f931e2.webp',
+      'Minecraft-Tree-Hole': 'https://img.xscnet.cn//i/2026/04/12/69db32f13bd07.webp',
+      'Mete0r-Tree-Hole': 'https://img.xscnet.cn//i/2026/04/12/69db348b726e1.webp',
+      'valaxy-yun-external-link': 'https://img.xscnet.cn//i/2026/04/12/69db34f47cc87.webp',
     },
 
     // 非 API 模式下：手动维护项目（不会显示 Star）
