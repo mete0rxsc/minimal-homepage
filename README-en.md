@@ -66,13 +66,20 @@ A personal homepage project built with Vue 3 + Vite + Tailwind CSS, supporting:
 npm install @mete0r/minimal-homepage
 ```
 
-2. Enter the project directory
+2. Copy the project
+
+```bash
+xcopy /E /I /H node_modules\minimal-homepage .
+```
+> Select Replace the `package.json`file 
+
+3. Enter the project directory
 
 ```bash
 cd @mete0r/minimal-homepage
 ```
 
-3. Install dependencies
+4. Install dependencies
 
 ```bash
 npm install

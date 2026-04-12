@@ -64,16 +64,23 @@
 1. 安装
 
 ```bash
-npm install @mete0r/minimal-homepage
+npm install minimal-homepage
 ```
 
-2. 进入项目
+2. 复制项目至当前目录
 
 ```bash
-cd @mete0r/minimal-homepage
+xcopy /E /I /H node_modules\minimal-homepage .
+```
+> 选择覆盖package.json文件  
+
+3. 进入项目
+
+```bash
+cd minimal-homepage
 ```
 
-3. 安装依赖
+4. 安装依赖
 
 ```bash
 npm install
