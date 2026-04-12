@@ -1,13 +1,13 @@
 ﻿<template>
-  <section class="py-20" id="projects">
-    <div class="flex items-end justify-between mb-10">
-      <h2 class="text-3xl font-bold dark:text-white">我的项目</h2>
+  <section class="py-14 md:py-20" id="projects">
+    <div class="flex items-end justify-between mb-6 md:mb-10 gap-4">
+      <h2 class="text-2xl md:text-3xl font-bold dark:text-white">我的项目</h2>
       <a
         v-if="isApiMode && config.github.username"
         :href="`https://github.com/${config.github.username}?tab=repositories`"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+        class="text-xs md:text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline shrink-0"
       >
         查看全部仓库
       </a>
@@ -25,18 +25,18 @@
         :href="repo.url"
         target="_blank"
         rel="noopener noreferrer"
-        class="block break-inside-avoid rounded-[2rem] overflow-hidden bg-white/60 dark:bg-gray-800/60 border border-white/40 dark:border-gray-700/40 backdrop-blur-xl shadow-[0_12px_32px_rgba(15,23,42,0.10)] dark:shadow-[0_16px_36px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1"
+        class="block break-inside-avoid rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-white/60 dark:bg-gray-800/60 border border-white/40 dark:border-gray-700/40 backdrop-blur-xl shadow-[0_12px_32px_rgba(15,23,42,0.10)] dark:shadow-[0_16px_36px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1"
       >
         <img
           v-if="repo.cover"
           :src="repo.cover"
           :alt="repo.name + ' cover'"
-          class="w-full h-44 object-cover"
+          class="w-full h-40 md:h-44 object-cover"
         />
 
-        <div class="p-6">
+        <div class="p-5 md:p-6">
           <div class="flex items-start justify-between gap-4 mb-3">
-            <h3 class="text-xl font-bold dark:text-white line-clamp-2">{{ repo.name }}</h3>
+            <h3 class="text-lg md:text-xl font-bold dark:text-white line-clamp-2">{{ repo.name }}</h3>
             <span class="text-xs px-2 py-1 rounded-full bg-black/5 dark:bg-white/10 text-gray-600 dark:text-gray-300 whitespace-nowrap">
               {{ repo.visibility || 'public' }}
             </span>

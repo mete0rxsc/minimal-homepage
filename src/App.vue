@@ -7,7 +7,7 @@
 
     <NavBar />
 
-    <main class="relative z-10 max-w-6xl mx-auto px-6 pt-[76px]">
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-[116px] md:pt-[76px]">
       <RouterView v-slot="{ Component, route }">
         <transition name="route-fade" mode="out-in">
           <component :is="Component" :key="route.fullPath" />

@@ -1,33 +1,33 @@
 ﻿<template>
-  <section class="py-20" id="articles">
-    <h2 class="text-3xl font-bold mb-10 dark:text-white">我的文章</h2>
+  <section class="py-14 md:py-20" id="articles">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6 md:mb-10 dark:text-white">我的文章</h2>
 
     <div v-if="isLoading" class="text-sm text-gray-500 dark:text-gray-400">正在加载 RSS...</div>
     <div v-else-if="loadError" class="text-sm text-red-500">RSS 加载失败：{{ loadError }}</div>
 
     <template v-else>
-      <transition-group name="article-list" tag="div" class="grid grid-cols-1 gap-6">
+      <transition-group name="article-list" tag="div" class="grid grid-cols-1 gap-4 md:gap-6">
         <a
           v-for="(post, index) in visibleArticles"
           :key="post.link || `${index}-${post.title}`"
           :href="post.link"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex flex-col md:flex-row gap-6 p-6 bg-white/40 dark:bg-gray-800/40 backdrop-blur-md rounded-[2.5rem] border border-white/20 hover:bg-white/60 transition-all"
+          class="flex flex-col md:flex-row gap-4 md:gap-6 p-4 md:p-6 bg-white/40 dark:bg-gray-800/40 backdrop-blur-md rounded-3xl md:rounded-[2.5rem] border border-white/20 hover:bg-white/60 transition-all"
         >
           <img :src="config.blog.randomCoverApi + '?r=' + index" class="w-full md:w-48 h-32 object-cover rounded-2xl" />
           <div class="flex-1">
-            <h3 class="text-xl font-bold dark:text-white mb-2">{{ post.title }}</h3>
+            <h3 class="text-lg md:text-xl font-bold dark:text-white mb-2">{{ post.title }}</h3>
             <p class="text-gray-500 dark:text-gray-400 line-clamp-2 text-sm">{{ post.description }}</p>
-            <p class="mt-4 text-blue-500 font-medium">跳转阅读全文 →</p>
+            <p class="mt-4 text-blue-500 font-medium text-sm md:text-base">跳转阅读全文 →</p>
           </div>
         </a>
       </transition-group>
 
-      <div class="mt-12 text-center" v-if="articles.length > 3">
+      <div class="mt-10 md:mt-12 text-center" v-if="articles.length > 3">
         <button
           @click="showAll = !showAll"
-          class="px-12 py-4 rounded-full bg-white dark:bg-black text-black dark:text-white font-bold shadow-lg hover:scale-105 transition-transform border border-gray-200 dark:border-gray-700"
+          class="px-8 md:px-12 py-3 md:py-4 rounded-full bg-white dark:bg-black text-black dark:text-white font-bold shadow-lg hover:scale-105 transition-transform border border-gray-200 dark:border-gray-700"
         >
           {{ showAll ? '收起文章' : '查看所有文章' }}
         </button>

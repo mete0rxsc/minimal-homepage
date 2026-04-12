@@ -12,5 +12,21 @@ export default defineConfig({
         }
       }
     })
-  ]
+  ],
+  build: {
+    lib: {
+      entry: 'src/index.js',
+      name: 'MinimalHomepage',
+      fileName: (format) => `index.${format}.js`
+    },
+    rollupOptions: {
+      external: ['vue', 'vue-router'],
+      output: {
+        globals: {
+          vue: 'Vue',
+          'vue-router': 'VueRouter'
+        }
+      }
+    }
+  }
 })

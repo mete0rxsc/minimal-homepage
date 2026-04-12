@@ -5,11 +5,14 @@
 一个基于 Vue 3 + Vite + Tailwind CSS 的个人主页项目，支持：
 
 - 首页 / 关于我 路由切换
-- 日夜主题切换
+- 日夜主题切换(小巧思)
 - 社交链接卡片
-- GitHub 项目展示（API 模式 / 手动模式）
-- RSS 文章拉取与展示
+- GitHub 项目展示（可选择 API 模式 / 手动模式）
+- RSS 博客文章拉取与展示
 - 全局配置化（`main.config.js`）
+
+## 预览
+![](https://)
 
 ## 目录
 
@@ -26,7 +29,7 @@
 
 ## 在线预览
 
-- `https://xscnet.cn`
+- `https://www.xscnet.cn`
 
 ## 功能特性
 
@@ -55,11 +58,25 @@
 
 ## 快速开始
 
-### 1) 安装依赖
+### 1) 安装
+#### 1. 安装
+
+```bash
+npm install @mete0r/minimal-homepage
+```
+
+#### 2. 进入项目
+
+```bash
+cd @mete0r/minimal-homepage
+```
+
+#### 3. 安装依赖
 
 ```bash
 npm install
 ```
+
 
 ### 2) 本地开发
 

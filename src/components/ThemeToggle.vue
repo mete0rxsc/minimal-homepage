@@ -46,6 +46,6 @@ onMounted(() => {
 .theme-toggle {
   /* 调整按钮位置 */
   position: relative;
-  left: -35px;
+  left: -45px;
 }
 </style>

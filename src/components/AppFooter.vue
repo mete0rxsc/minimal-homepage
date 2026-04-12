@@ -1,5 +1,5 @@
 ﻿<template>
-  <footer class="relative z-10 py-8 px-10 mt-20 border-t border-gray-200 dark:border-gray-800 flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+  <footer class="relative z-10 py-6 md:py-8 px-4 md:px-10 mt-14 md:mt-20 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row gap-4 md:gap-0 justify-between md:items-center text-sm text-gray-500 dark:text-gray-400">
     <div class="flex flex-col gap-1">
       <span>{{ config.footer.copyright }}</span>
       <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 dark:hover:text-white">
