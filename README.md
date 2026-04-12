@@ -30,7 +30,7 @@
 
 ## 在线预览
 
-- `https://www.xscnet.cn`
+- [https://xscnet.cn/](https://xscnet.cn/)
 
 ## 功能特性
 

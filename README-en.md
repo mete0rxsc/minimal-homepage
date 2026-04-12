@@ -29,7 +29,7 @@ A personal homepage project built with Vue 3 + Vite + Tailwind CSS, supporting:
 
 ## Live Demo
 
-- `https://www.xscnet.cn`
+- [https://xscnet.cn/](https://xscnet.cn/)
 
 ## Features
 
