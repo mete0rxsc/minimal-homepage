@@ -1,0 +1,54 @@
+name: ✨ 功能建议
+description: 提一个你想看到的新功能或改进
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 欢迎提出建议！
+        你的想法可能会让这个项目变得更好。
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 这个功能解决了什么问题？
+      description: 清晰简洁地描述你遇到的需求或痛点
+      placeholder: 例如：我每次想找 RSS 订阅入口都要滚动到底部...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 你期望的解决方案
+      description: 描述你理想中的实现方式
+      placeholder: 例如：希望在导航栏固定一个 RSS 订阅按钮
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 替代方案
+      description: 你考虑过其他方式吗？
+      placeholder: 例如：侧边栏悬浮入口，或者快捷键打开
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 补充信息/参考示例
+      description: 如果有其他网站类似功能的截图或链接，可以贴在这里
+      placeholder: 例如：可以参考 XXX 博客的夜间模式切换方式
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: 涉及的范围（可多选）
+      options:
+        - label: 页面布局 / UI
+        - label: 路由 / 导航
+        - label: 组件功能
+        - label: 样式 / 主题切换
+        - label: 性能优化
+        - label: 其他

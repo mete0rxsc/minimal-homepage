@@ -1,0 +1,72 @@
+name: 🐛 Bug 报告
+description: 提交一个问题反馈
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 感谢提交反馈！
+        请尽可能详细地描述问题，这能帮助我更快速地定位和修复。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 清晰简洁地描述这个 Bug 是什么
+      placeholder: 例如：点击导航栏的「项目」按钮时，页面没有滚动到对应位置...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现步骤
+      description: 如何复现这个问题？
+      placeholder: |
+        1. 访问首页
+        2. 点击「关于我」
+        3. 看到报错...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+      description: 你期望发生什么？
+      placeholder: 应该正常跳转到关于我页面
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图/录屏
+      description: 如果有，请附上（可以直接粘贴图片）
+      placeholder: 拖拽或粘贴图片到这里
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: 浏览器环境
+      description: 你在什么浏览器上遇到这个问题？
+      options:
+        - Chrome/Edge
+        - Firefox
+        - Safari
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 项目版本/提交号
+      description: 如果有，可以填写 Git commit hash
+      placeholder: 例如：e3f2a1b
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 控制台报错信息
+      description: 按 F12 打开开发者工具，复制 Console 中的红色报错
+      render: shell
